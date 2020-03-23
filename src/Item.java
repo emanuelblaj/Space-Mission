@@ -5,7 +5,6 @@ public class Item {
 	private int weight ;
 	
 	public Item(String name, int weight) {
-		super();
 		this.name = name;
 		this.weight = weight;
 	}

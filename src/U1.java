@@ -1,5 +1,10 @@
 
 public class U1 extends Rocket {
+	@Override
+	public void setCost(int cost) {
+		// TODO Auto-generated method stub
+		super.setCost(cost);
+	}
 
 	@Override
 	public boolean land() {

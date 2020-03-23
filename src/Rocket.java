@@ -63,37 +63,45 @@ public Rocket() {
 		return cargo_carried;
 	}
 
-	public void setCargo_carried(double cargo_carried) {
-		this.cargo_carried = cargo_carried;
+	public void setCargo_carried(double itemWeight) {
+		this.cargo_carried += itemWeight;
 	}
 
 	public double getCargo_limit() {
 		return cargo_limit;
 	}
 
-	public void setCargo_limit(double cargo_limit) {
-		this.cargo_limit = cargo_limit;
+	public void setCargo_limit(double cargoTotal) {
+		this.cargo_limit = cargoTotal;
+	}
+
+//	Tests to see if rocket can carry more items
+	 @Override
+	public boolean canCarry(Item item) {
+		double itemWeight = item.getWeight();
+		if(itemWeight + cargo_carried > cargo_limit) {
+			return false;
+		} else {
+		carry(item);
+		return true;
+	}
+	 }
+	 
+//	 Adds item to cargo
+	 @Override
+	public void carry(Item item) {
+		cargo_carried += item.getWeight();
+	}
+
+	@Override
+	public boolean launch() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 	@Override
 	public boolean land() {
 		// TODO Auto-generated method stub
-		return false;
-	}
-	
-	@Override
-	public boolean launch() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	 @Override
-	public boolean canCarry(int weight) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	 @Override
-	public void carry(int weight) {
-		// TODO Auto-generated method stub
-		
+		return true;
 	}
 }
