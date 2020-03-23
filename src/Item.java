@@ -1,8 +1,13 @@
 
 public class Item {
 
-	private String name ;
-	private int weight ;
+	private String name = "" ;
+	private int weight = 0 ;
+	
+	public Item() {
+		this.name = "";
+		this.weight = 0;
+	}
 	
 	public Item(String name, int weight) {
 		this.name = name;
